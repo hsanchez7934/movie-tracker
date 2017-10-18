@@ -1,7 +1,7 @@
 import React from 'react';
-import MovieCard from './../MovieCard/MovieCard';
+import MovieCard from './MovieCard/MovieCard';
 
-export default const CardCatalog = ({ movies }) => {
+const CardCatalog = ({ movies }) => {
   const mappedCards = movies.map( movie => {
     return (<MovieCard
             title={movie.title}
@@ -14,3 +14,4 @@ export default const CardCatalog = ({ movies }) => {
     </div>
   )
 };
+export default CardCatalog;

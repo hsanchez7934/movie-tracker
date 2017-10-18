@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default const MovieCard = ({ title, releaseDate, image }) => {
+const MovieCard = ({ title, releaseDate, image }) => {
 
   return(
     <article className='movie-card'>
@@ -10,3 +10,5 @@ export default const MovieCard = ({ title, releaseDate, image }) => {
     </article>
   )
 }
+
+export default MovieCard;

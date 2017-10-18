@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './containers/AppContainer.js';
+import CardCatalogContainer from './containers/CardCatalogContainer';
+import App from './components/App/App.jsx';
 import MovieIndex from './components/movieIndex';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
@@ -13,6 +14,7 @@ const store = createStore(rootReducer, devTools, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <AppContainer  />
+    <App/>
+    <CardCatalogContainer />
   </Provider>,
      document.getElementById('main'))

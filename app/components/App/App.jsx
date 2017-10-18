@@ -16,8 +16,10 @@ export default class App extends Component {
       <BrowserRouter>
         <div className='app'>
           <Route path='/' render={() => {
-            <button>Login</button>
-            <CardCatalogContainer />
+            <div>
+              <button>Login</button>
+              <CardCatalogContainer />
+            </div>
           }} />
         </div>
       </BrowserRouter>
