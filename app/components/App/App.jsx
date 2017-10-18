@@ -15,9 +15,10 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div className='app'>
-          <Route path='/' render={() => <h1>Movie Watcher</h1> } />
-          <Route path='/test' render={() => <h1>Test</h1> } />
-
+          <Route path='/' render={() => {
+            <button>Login</button>
+            <CardCatalogContainer />
+          }} />
         </div>
       </BrowserRouter>
     )
