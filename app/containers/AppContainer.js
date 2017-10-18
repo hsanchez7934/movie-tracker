@@ -5,8 +5,6 @@ import App from './../components/App/App.jsx';
 const mapStateToProps = (store) => ({
   movies: store.movies })
 
-
-
 const mapDispatchToProps = (dispatch) => ({
   getMovies: (movies) => {
     dispatch(getNowPlaying(movies))
