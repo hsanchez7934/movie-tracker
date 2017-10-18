@@ -19,7 +19,7 @@ export default class App extends Component {
 
   componentDidMount() {
     console.log('app props: ', this.props);
-    getNowPlaying()
+    this.props.getMovies()
   }
 
   render() {
