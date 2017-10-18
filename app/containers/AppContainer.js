@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getMovies } from './../actions/index.js';
+import { getMovies, getNowPlaying } from './../actions/index.js';
 import App from './../components/App/App.jsx';
 
 const mapStateToProps = (store) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = (store) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   getMovies: (movies) => {
-    dispatch(getMovies(movies))
+    dispatch(getNowPlaying(movies))
   }
 })
 
