@@ -19,8 +19,8 @@ class Login extends Component {
   render() {
     return (
       <div className='login'>
-        <input type="text" placeholder="email" onChange={(event) => this.updateState(event, 'email')}/>
-        <input type="text" placeholder="password" onChange={(event) => this.updateState(event, 'password')}/>
+        <input type="text" placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
+        <input type="text" placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
         <button>Submit</button>
         <div className="no-account">
           <h3>Don't have an account?
