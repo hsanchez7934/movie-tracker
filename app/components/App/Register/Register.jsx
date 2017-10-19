@@ -39,7 +39,6 @@ class Register extends Component {
   // }
 
   render() {
-    console.log("these are props! ", this.props);
     return (
       <div className='register'>
         <input type="text" placeholder="Name" value={this.state.name} onChange={(event) => this.updateState(event, 'name')}/>

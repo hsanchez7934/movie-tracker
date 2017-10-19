@@ -1,7 +1,10 @@
 
 
-const cleanData = (response, user) => {
+export const cleanData = (response, user) => {
   return Object.assign({id: response.id}, user)
 }
 
-export default cleanData;
+
+// export const queryDatabase = (id, email) => {
+//   fetch('http://localhost:3000/api/users/')
+// }
