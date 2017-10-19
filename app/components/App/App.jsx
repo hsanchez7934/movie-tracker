@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { getNowPlaying, getMovies } from '../../actions';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import CardCatalogContainer from './../../containers/CardCatalogContainer.js';
 import { Switch } from 'react-router';
 import Login from './Login/Login';
@@ -20,7 +20,9 @@ export default class App extends Component {
             <Route exact path='/' render={() => {
               return (
                 <div>
-                  <button>Login</button>
+                  <Link to={'/login'}>
+                    <button>Login</button>
+                  </Link>
                   <CardCatalogContainer />
                 </div>
               )
