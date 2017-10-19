@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { getNowPlaying, getMovies } from '../../actions';
 import { BrowserRouter, Route } from 'react-router-dom';
-import CardCatalogContainer from './CardCatalog/CardCatalog.jsx';
+import CardCatalogContainer from './../../containers/CardCatalogContainer.js';
+
 
 export default class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
   }
 
   render() {
-    // console.log(this.props);
     return (
       <BrowserRouter>
         <div className='app'>

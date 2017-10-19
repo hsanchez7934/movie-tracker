@@ -3,19 +3,21 @@ import { getNowPlaying, getMovies } from './../../../actions/index.js';
 import MovieCard from './MovieCard/MovieCard';
 
 export default class CardCatalog extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    console.log('cc', props)
   }
 
   componentDidMount() {
-    console.log('CardCatalog props: ', this.props);
+
     this.props.getMovies()
   }
 
   render() {
+    console.log('CardCatalog props: ', this.props);
     const { movies } = this.props;
-    debugger
-    const mappedCards = movies.map( movie => {
+    // debugger
+    const mappedCards = (movies || []).map( movie => {
       return ( <MovieCard
               title={movie.title}
               releaseDate={movie.release_date}

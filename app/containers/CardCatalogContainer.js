@@ -3,7 +3,8 @@ import { getMovies, getNowPlaying } from './../actions/index.js';
 import CardCatalog from './../components/App/CardCatalog/CardCatalog.jsx';
 
 const mapStateToProps = (store) => ({
-  movies: store.movies })
+  movies: store.movies
+})
 
 const mapDispatchToProps = (dispatch) => ({
   // debugger
