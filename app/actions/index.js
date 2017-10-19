@@ -1,4 +1,5 @@
 import jenKey from './../key.js';
+import cleanData from './../helper.js'
 
 export const getMovies = (movies) => {
   return {
@@ -16,6 +17,7 @@ export const addUser = (user) => {
 }
 
 
+
 export const postUser = (user) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/users/new', {
@@ -25,7 +27,7 @@ export const postUser = (user) => {
         'Content-Type': 'application/json'
       }
     }).then(response => response.json())
-    .then(parsedResponse => dispatch(addUser(parsedResponse)))
+    .then(parsedResponse => cleanData(parsedResponse, user)) .then(cleanedData => dispatch(addUser(cleanedData)))
     .catch(err => console.log('err: ', err))
   }
 }
