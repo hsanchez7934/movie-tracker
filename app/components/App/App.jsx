@@ -5,8 +5,8 @@ import CardCatalogContainer from './../../containers/CardCatalogContainer.js';
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
   }
 
   render() {

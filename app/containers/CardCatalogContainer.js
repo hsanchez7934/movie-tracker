@@ -7,9 +7,7 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  // debugger
   getMovies: (movies) => {
-    console.log('mapDTP: ', movies);
     return dispatch(getNowPlaying(movies))
   }
 })
