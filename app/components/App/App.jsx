@@ -3,6 +3,7 @@ import { getNowPlaying, getMovies } from '../../actions';
 import { BrowserRouter, Route } from 'react-router-dom';
 import CardCatalogContainer from './../../containers/CardCatalogContainer.js';
 import { Switch } from 'react-router';
+import Login from './Login/Login';
 
 
 export default class App extends Component {
@@ -16,7 +17,7 @@ export default class App extends Component {
         <div className='app'>
           <Switch>
 
-            <Route path='/' render={() => {
+            <Route exact path='/' render={() => {
               return (
                 <div>
                   <button>Login</button>
@@ -25,11 +26,7 @@ export default class App extends Component {
               )
             }} />
 
-            <Route path='/login' render={() =>
-              <h2>
-                LOGIN
-              </h2>
-            } />
+            <Route exact path='/login' component={Login}/>
           </Switch>
 
       </div>
