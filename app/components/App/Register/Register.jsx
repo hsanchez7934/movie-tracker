@@ -16,25 +16,36 @@ class Register extends Component {
     });
   }
 
-  addUserToDatabase() {
-    fetch('http://localhost:3000/api/users/new', {
-      method: 'post',
-      body: JSON.stringify(this.state),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(response => response.json())
-    .then(parsed => console.log('parsed: ', parsed))
-    .catch(err => console.log('err: ', err))
+  handleClick(event) {
+    event.preventDefault()
+    this.props.addUser(this.state)
+    this.setState({
+      name: '',
+      email: '',
+      password: ''
+    })
   }
+
+  // addUserToDatabase() {
+  //   fetch('http://localhost:3000/api/users/new', {
+  //     method: 'post',
+  //     body: JSON.stringify(this.state),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).then(response => response.json())
+  //   .then(parsed => console.log('parsed: ', parsed))
+  //   .catch(err => console.log('err: ', err))
+  // }
 
   render() {
     return (
       <div className='register'>
-        <input type="text" placeholder="Name" onChange={(event) => this.updateState(event, 'name')}/>
-        <input type="text" placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
-        <input type="text" placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
-        <button onClick={this.addUserToDatabase.bind(this)}>Submit</button>
+        <input type="text" placeholder="Name" value={this.state.name} onChange={(event) => this.updateState(event, 'name')}/>
+        <input type="text" placeholder="Email" value={this.state.email} onChange={(event) => this.updateState(event, 'email')}/>
+        <input type="text" placeholder="Password"
+          value={this.state.password} onChange={(event) => this.updateState(event, 'password')}/>
+        <button onClick={(event) => this.handleClick(event)}>Submit</button>
       </div>
     )
   }
