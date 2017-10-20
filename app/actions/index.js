@@ -30,9 +30,9 @@ export const loginUser = (currUser) => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then(response =>
-    response.ok ? response.json() : alert('Email and Password do not match'))
-    .then(parsedResponse => dispatch(login(currUser)))
+    }).then(response => response.json())
+    .then(parsedResponse => dispatch(login(parsedResponse.data)))
+    .catch(err => alert('Email and Password do not match'))
   }
 }
 

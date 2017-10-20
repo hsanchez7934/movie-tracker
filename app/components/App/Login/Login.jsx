@@ -17,7 +17,6 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className='login'>
         <input type="text" placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
