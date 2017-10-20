@@ -1,0 +1,30 @@
+.movie-card {
+  border: 2px solid black;
+  width: 33%;
+  background-color: #E0E2E1;
+  margin: 20px 10px 0px 10px;
+  box-shadow: 2px 2px 1px black;
+}
+
+
+.movie-card:hover {
+  background-color: #23CDFD;
+  border: 2px solid white;
+  box-shadow: 10px 10px 5px black;
+  cursor: pointer;
+}
+
+
+.title-card {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 10px 10px 10px 10px
+
+}
+
+
+.release-date-card {
+  font-size: 12px;
+  color: red;
+}
