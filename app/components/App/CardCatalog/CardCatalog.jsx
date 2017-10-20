@@ -12,8 +12,9 @@ export default class CardCatalog extends Component {
   }
 
   render() {
-    const mappedCards = this.props.movies.map( movie => {
+    const mappedCards = this.props.movies.map( (movie, index) => {
       return ( <MovieCard
+              key={index}
               title={movie.title}
               releaseDate={movie.release_date}
               image={movie.poster_path} />)

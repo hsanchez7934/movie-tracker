@@ -15,6 +15,27 @@ export const addUser = (user) => {
   };
 }
 
+export const login = (currUser) => {
+  return {
+    type: 'LOGIN' ,
+    currUser
+  }
+}
+
+export const loginUser = (currUser) => {
+  return (dispatch) => {
+    fetch('http://localhost:3000/api/users', {
+      method: 'post',
+      body: JSON.stringify(currUser),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response =>
+    response.ok ? response.json() : alert('Email and Password do not match'))
+    .then(parsedResponse => dispatch(login(currUser)))
+  }
+}
+
 export const postUser = (user) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/users/new', {
@@ -26,7 +47,7 @@ export const postUser = (user) => {
     }).then(response =>
     response.ok ? response.json() : alert('Email already exists!'))
     .then(parsedResponse => {
-      return cleanData(parsedResponse, user) }) .then(cleanedData => dispatch(addUser(cleanedData)))
+      return cleanData(parsedResponse, user) }).then(cleanedData => dispatch(addUser(cleanedData)))
     .catch(err => console.log('err: ', err))
   }
 }

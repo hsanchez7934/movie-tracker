@@ -3,8 +3,8 @@ import { getNowPlaying, getMovies } from '../../actions';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
 import CardCatalogContainer from './../../containers/CardCatalogContainer.js';
 import { Switch } from 'react-router';
-import Login from './Login/Login';
 import RegisterContainer from './../../containers/RegisterContainer.js';
+import LoginContainer from './../../containers/LoginContainer.js';
 
 
 export default class App extends Component {
@@ -29,7 +29,7 @@ export default class App extends Component {
               )
             }} />
 
-            <Route exact path='/login' component={Login}/>
+            <Route exact path='/login' component={LoginContainer} />
             <Route exact path='/register' component={RegisterContainer} />
           </Switch>
 
