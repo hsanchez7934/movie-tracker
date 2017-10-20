@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './MovieCard.scss'
+
 
 const MovieCard = ({ title, releaseDate, image }) => {
 
