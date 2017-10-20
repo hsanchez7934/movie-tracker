@@ -3,7 +3,8 @@ import { addUser, postUser } from './../actions/index.js';
 import Register from './../components/App/Register/Register.jsx';
 
 const mapStateToProps = (store) => ({
-  user: store.user
+  user: store.user,
+  currUser: store.currUser
 })
 
 const mapDispatchToProps = (dispatch) => ({

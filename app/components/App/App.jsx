@@ -13,6 +13,7 @@ export default class App extends Component {
   }
 
   render () {
+    console.log('props: ', this.props);
     return (
       <BrowserRouter>
         <div className='app'>
@@ -30,7 +31,17 @@ export default class App extends Component {
             }} />
 
             <Route exact path='/login' component={LoginContainer} />
-            <Route exact path='/register' component={RegisterContainer} />
+            <Route exact path='/register'
+              render={() => {
+                return (
+                  <div>
+                    <Link to={'/login'}>
+                      <button>Login</button>
+                    </Link>
+                    <RegisterContainer />
+                  </div>
+                )
+              }}/>
           </Switch>
 
       </div>
