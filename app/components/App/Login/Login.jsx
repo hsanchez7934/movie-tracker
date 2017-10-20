@@ -17,11 +17,12 @@ class Login extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className='login'>
         <input type="text" placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
         <input type="text" placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
-        <button>Submit</button>
+        <button onClick={() => this.props.login(this.state)}>Submit</button>
         <div className="no-account">
           <h3>Don't have an account?
             <Link to={'/register'}>
