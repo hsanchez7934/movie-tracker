@@ -1,7 +1,7 @@
-const login = (state = [], action) => {
+const login = (state = {}, action) => {
   switch(action.type) {
     case 'LOGIN':
-      return [...state, action.currUser];
+      return action.currUser;
       default:
       return state;
   }
