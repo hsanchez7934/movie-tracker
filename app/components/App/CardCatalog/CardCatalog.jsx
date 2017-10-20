@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getNowPlaying, getMovies } from './../../../actions/index.js';
 import MovieCard from './MovieCard/MovieCard';
+import css from './CardCatalog.scss';
 
 export default class CardCatalog extends Component {
   constructor() {
@@ -20,7 +21,7 @@ export default class CardCatalog extends Component {
               image={movie.poster_path} />)
     })
     return (
-      <div>
+      <div className="card-catalog">
         {mappedCards}
       </div>
     )

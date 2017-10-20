@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { getNowPlaying, getMovies } from '../../actions';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-import CardCatalogContainer from './../../containers/CardCatalogContainer.js';
-import { Switch } from 'react-router';
-import RegisterContainer from './../../containers/RegisterContainer.js';
-import LoginContainer from './../../containers/LoginContainer.js';
+import React, { Component } from 'react'
+import { getNowPlaying, getMovies } from '../../actions'
+import { BrowserRouter, Route, Link } from 'react-router-dom'
+import CardCatalogContainer from './../../containers/CardCatalogContainer.js'
+import { Switch } from 'react-router'
+import RegisterContainer from './../../containers/RegisterContainer.js'
+import LoginContainer from './../../containers/LoginContainer.js'
 
 
 export default class App extends Component {
@@ -12,7 +12,7 @@ export default class App extends Component {
     super();
   }
 
-  render() {
+  render () {
     return (
       <BrowserRouter>
         <div className='app'>
