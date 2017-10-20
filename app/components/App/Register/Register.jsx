@@ -26,18 +26,6 @@ class Register extends Component {
     })
   }
 
-  // addUserToDatabase() {
-  //   fetch('http://localhost:3000/api/users/new', {
-  //     method: 'post',
-  //     body: JSON.stringify(this.state),
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     }
-  //   }).then(response => response.json())
-  //   .then(parsed => console.log('parsed: ', parsed))
-  //   .catch(err => console.log('err: ', err))
-  // }
-
   render() {
     return (
       <div className='register'>

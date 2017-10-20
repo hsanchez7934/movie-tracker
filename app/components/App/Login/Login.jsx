@@ -16,12 +16,21 @@ class Login extends Component {
     });
   }
 
+  handleClick(event) {
+    event.preventDefault();
+    this.props.login(this.state);
+    this.setState({
+      email: '',
+      password: ''
+    })
+  }
+
   render() {
     return (
       <div className='login'>
-        <input type="text" placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
-        <input type="text" placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
-        <button onClick={() => this.props.login(this.state)}>Submit</button>
+        <input type="text" value={this.state.email} placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
+        <input type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
+        <button onClick={(event) => this.handleClick(event)}>Submit</button>
         <div className="no-account">
           <h3>Don't have an account?
             <Link to={'/register'}>

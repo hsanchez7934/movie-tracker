@@ -3,7 +3,9 @@ import { getMovies, getNowPlaying } from './../actions/index.js';
 import App from './../components/App/App.jsx';
 
 const mapStateToProps = (store) => ({
-  movies: store.movies })
+  movies: store.movies,
+  currUser: store.currUser
+})
 
 
 
