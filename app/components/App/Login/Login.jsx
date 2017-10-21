@@ -32,9 +32,9 @@ class Login extends Component {
         <input type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
         <button onClick={(event) => this.handleClick(event)}>Submit</button>
         <div className="no-account">
-          <h3>Don't have an account?
+          <h3 className="dont-have-account">Don't have an account?
             <Link to={'/register'}>
-              <span className="register-link">Click here to register.</span>
+              <span className="register-link">   CLICK HERE to register.</span>
             </Link>
           </h3>
         </div>
