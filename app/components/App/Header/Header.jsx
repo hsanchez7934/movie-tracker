@@ -7,7 +7,7 @@ const Header = (props) => {
 console.log('header props: ', props);
     return (
       <div className="not-logged-in-user">
-        <h2 className="movie-tracker-title">Movie Tracker</h2>
+        <h2 className="movie-tracker-title">Movie <span className="tracker">Tracker</span></h2>
         {!props.currUser.id &&
           <Link to={'/login'}>
             <button>Login</button>
@@ -16,7 +16,7 @@ console.log('header props: ', props);
         {
           props.currUser.id &&
           <div className="logged-in-user">
-            <h3>Hello, <span>{props.currUser.name}</span></h3>
+            <h3 className="welcome-user">Hello, <span>{props.currUser.name}</span></h3>
             <button onClick={() => logout()}>Log Out</button>
           </div>
         }
