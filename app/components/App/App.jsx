@@ -5,6 +5,7 @@ import CardCatalogContainer from './../../containers/CardCatalogContainer.js'
 import { Switch } from 'react-router'
 import RegisterContainer from './../../containers/RegisterContainer.js'
 import LoginContainer from './../../containers/LoginContainer.js'
+import HeaderContainer from './../../containers/HeaderContainer.js'
 
 
 export default class App extends Component {
@@ -22,9 +23,7 @@ export default class App extends Component {
             <Route exact path='/' render={() => {
               return (
                 <div>
-                  <Link to={'/login'}>
-                    <button>Login</button>
-                  </Link>
+                  <HeaderContainer />
                   <CardCatalogContainer />
                 </div>
               )
@@ -35,9 +34,7 @@ export default class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <Link to={'/login'}>
-                      <button>Login</button>
-                    </Link>
+                    <HeaderContainer />
                     <RegisterContainer />
                   </div>
                 )
