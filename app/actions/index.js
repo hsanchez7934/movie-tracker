@@ -22,6 +22,13 @@ export const login = (currUser) => {
   }
 }
 
+export const logout = (currUser) => {
+  return {
+    type: 'LOGOUT' ,
+    currUser
+  }
+}
+
 export const loginUser = (currUser) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/users', {

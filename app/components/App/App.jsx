@@ -5,6 +5,7 @@ import CardCatalogContainer from './../../containers/CardCatalogContainer.js'
 import { Switch } from 'react-router'
 import RegisterContainer from './../../containers/RegisterContainer.js'
 import LoginContainer from './../../containers/LoginContainer.js'
+import HeaderContainer from './../../containers/HeaderContainer.js'
 
 
 export default class App extends Component {
@@ -12,8 +13,12 @@ export default class App extends Component {
     super();
   }
 
-  render () {
+  componentDidMount() {
     console.log('props: ', this.props);
+
+  }
+
+  render () {
     return (
       <BrowserRouter>
         <div className='app'>
@@ -22,22 +27,26 @@ export default class App extends Component {
             <Route exact path='/' render={() => {
               return (
                 <div>
-                  <Link to={'/login'}>
-                    <button>Login</button>
-                  </Link>
+                  <HeaderContainer />
                   <CardCatalogContainer />
                 </div>
               )
             }} />
 
-            <Route exact path='/login' component={LoginContainer} />
+            <Route exact path='/login'
+              render={() => {
+                return (
+                  <div>
+                    <h2 className="movie-tracker-title">Movie Tracker</h2>
+                    <LoginContainer />
+                  </div>
+                )
+              }}/>
             <Route exact path='/register'
               render={() => {
                 return (
                   <div>
-                    <Link to={'/login'}>
-                      <button>Login</button>
-                    </Link>
+                    <HeaderContainer />
                     <RegisterContainer />
                   </div>
                 )
