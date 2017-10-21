@@ -1,14 +1,17 @@
 import { connect } from 'react-redux';
-import { login, loginUser } from './../actions/index.js';
+import { login, logout, loginUser } from './../actions/index.js';
 import Header from './../components/App/Header/Header.jsx';
 
 const mapStateToProps = (store) => ({
   currUser: store.login
 })
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
+  // logout: (currUser) => {
+  //   dispatch(logout(currUser));
+  // },
   login: (currUser) => {
-    return dispatch(loginUser(currUser));
+  return dispatch(loginUser(currUser));
   }
 })
 

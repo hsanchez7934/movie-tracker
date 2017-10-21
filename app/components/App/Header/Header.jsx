@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import { getNowPlaying, getMovies } from './../../../actions/index.js';
+// import { getNowPlaying, getMovies } from './../../../actions/index.js';
 
 const Header = (props) => {
-console.log('route: ', Route);
+console.log('header props: ', props);
     return (
-      <div className='header'>
-        <h2>Movie Tracker</h2>
+      <div className="not-logged-in-user">
+        <h2 className="movie-tracker-title">Movie Tracker</h2>
         {!props.currUser.id &&
           <Link to={'/login'}>
             <button>Login</button>
@@ -14,9 +14,9 @@ console.log('route: ', Route);
         }
         {
           props.currUser.id &&
-          <div>
-            <p>Hello, <span>{props.currUser.name}</span></p>
-            <button>Logout</button>
+          <div className="logged-in-user">
+            <h3>Hello, <span>{props.currUser.name}</span></h3>
+            <button>Log Out</button>
           </div>
             }
           </div>

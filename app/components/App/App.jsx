@@ -37,7 +37,7 @@ export default class App extends Component {
               render={() => {
                 return (
                   <div>
-                    <h2>Movie Tracker</h2>
+                    <h2 className="movie-tracker-title">Movie Tracker</h2>
                     <LoginContainer />
                   </div>
                 )
