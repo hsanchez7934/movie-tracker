@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 import { Route, Link } from 'react-router-dom';
 
 class Login extends Component {
@@ -27,6 +28,7 @@ class Login extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
       <div className='login'>
         <input type="text" value={this.state.email} placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
         <input type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
@@ -40,6 +42,28 @@ class Login extends Component {
         </div>
       </div>
     )
+=======
+      <div>
+        {this.props.currUser.id &&
+          <Redirect to="/" />
+        }
+        {!this.props.currUser.id && (
+          <div className='login'>
+            <input type="text" value={this.state.email} placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
+            <input type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
+            <button onClick={(event) => this.handleClick(event)}>Submit</button>
+            <div className="no-account">
+              <h3>Don't have an account?
+                <Link to={'/register'}>
+                  <span className="register-link">Click here to register.</span>
+                </Link>
+              </h3>
+            </div>
+          </div>
+        )
+        }
+      </div>)
+>>>>>>> redirect after login
   }
 }
 
