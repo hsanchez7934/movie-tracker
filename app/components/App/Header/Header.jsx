@@ -16,10 +16,10 @@ console.log('header props: ', props);
           props.currUser.id &&
           <div className="logged-in-user">
             <h3>Hello, <span>{props.currUser.name}</span></h3>
-            <button>Log Out</button>
+            <button onClick={() => location.reload()}>Log Out</button>
           </div>
-            }
-          </div>
+        }
+      </div>
           )
   }
 

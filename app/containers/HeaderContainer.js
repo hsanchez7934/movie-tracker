@@ -7,9 +7,9 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // logout: (currUser) => {
-  //   dispatch(logout(currUser));
-  // },
+  logout: (currUser) => {
+    dispatch(logout(currUser));
+  },
   login: (currUser) => {
   return dispatch(loginUser(currUser));
   }
