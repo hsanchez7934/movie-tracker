@@ -28,21 +28,6 @@ class Login extends Component {
 
   render() {
     return (
-<<<<<<< HEAD
-      <div className='login'>
-        <input type="text" value={this.state.email} placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
-        <input type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
-        <button onClick={(event) => this.handleClick(event)}>Submit</button>
-        <div className="no-account">
-          <h3 className="dont-have-account">Don't have an account?
-            <Link to={'/register'}>
-              <span className="register-link">   CLICK HERE to register.</span>
-            </Link>
-          </h3>
-        </div>
-      </div>
-    )
-=======
       <div>
         {this.props.currUser.id &&
           <Redirect to="/" />
@@ -63,7 +48,6 @@ class Login extends Component {
         )
         }
       </div>)
->>>>>>> redirect after login
   }
 }
 
