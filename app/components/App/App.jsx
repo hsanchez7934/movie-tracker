@@ -13,8 +13,12 @@ export default class App extends Component {
     super();
   }
 
-  render () {
+  componentDidMount() {
     console.log('props: ', this.props);
+
+  }
+
+  render () {
     return (
       <BrowserRouter>
         <div className='app'>
@@ -29,7 +33,15 @@ export default class App extends Component {
               )
             }} />
 
-            <Route exact path='/login' component={LoginContainer} />
+            <Route exact path='/login'
+              render={() => {
+                return (
+                  <div>
+                    <h2>Movie Tracker</h2>
+                    <LoginContainer />
+                  </div>
+                )
+              }}/>
             <Route exact path='/register'
               render={() => {
                 return (
