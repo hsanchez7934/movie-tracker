@@ -19,11 +19,10 @@ console.log('header props: ', props);
             <h3>Hello, <span>{props.currUser.name}</span></h3>
             <button onClick={() => logout()}>Log Out</button>
           </div>
-            }
-          </div>
         }
       </div>
-          )
-  }
+      )
+        }
+
 
 export default Header;
