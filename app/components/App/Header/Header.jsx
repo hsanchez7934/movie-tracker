@@ -21,6 +21,8 @@ console.log('header props: ', props);
           </div>
             }
           </div>
+        }
+      </div>
           )
   }
 
