@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 // import { getNowPlaying, getMovies } from './../../../actions/index.js';
 
 const Header = (props) => {
+  const { logout } = props;
 console.log('header props: ', props);
     return (
       <div className="not-logged-in-user">
@@ -16,7 +17,7 @@ console.log('header props: ', props);
           props.currUser.id &&
           <div className="logged-in-user">
             <h3>Hello, <span>{props.currUser.name}</span></h3>
-            <button>Log Out</button>
+            <button onClick={() => logout()}>Log Out</button>
           </div>
             }
           </div>

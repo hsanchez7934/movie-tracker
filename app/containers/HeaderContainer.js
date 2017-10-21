@@ -7,12 +7,9 @@ const mapStateToProps = (store) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  // logout: (currUser) => {
-  //   dispatch(logout(currUser));
-  // },
-  login: (currUser) => {
-  return dispatch(loginUser(currUser));
-  }
+  logout: (currUser) => {
+    return dispatch(logout(currUser));
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
