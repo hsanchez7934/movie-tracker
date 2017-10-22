@@ -6,6 +6,7 @@ import { Switch } from 'react-router'
 import RegisterContainer from './../../containers/RegisterContainer.js'
 import LoginContainer from './../../containers/LoginContainer.js'
 import HeaderContainer from './../../containers/HeaderContainer.js'
+import FavoritesContainer from './../../containers/FavoritesContainer.js'
 
 
 export default class App extends Component {
@@ -48,6 +49,15 @@ export default class App extends Component {
                   <div>
                     <HeaderContainer />
                     <RegisterContainer />
+                  </div>
+                )
+              }}/>
+
+            <Route exact path='/favorites'
+              render={() => {
+                return (
+                  <div>
+                    <FavoritesContainer />
                   </div>
                 )
               }}/>

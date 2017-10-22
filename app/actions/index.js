@@ -87,7 +87,7 @@ export const addFavorite = fav => {
     })
       .then(response => response.json())
       .then(parsedResponse => {
-        dispatch(favorite(parsedResponse))
+        dispatch(favorite(fav))
     })
   }
 }
