@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(logout(currUser));
   },
   login: (currUser) => {
-  dispatch(loginUser(currUser));
+    dispatch(loginUser(currUser));
   }
 })
 
