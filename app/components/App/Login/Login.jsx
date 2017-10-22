@@ -28,17 +28,17 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="login">
         {this.props.currUser.id &&
           <Redirect to="/" />
         }
         {!this.props.currUser.id && (
           <div className='login'>
-            <input type="text" value={this.state.email} placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
-            <input type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
-            <button onClick={(event) => this.handleClick(event)}>Submit</button>
+            <input className="email-input" type="text" value={this.state.email} placeholder="Email" onChange={(event) => this.updateState(event, 'email')}/>
+            <input className="password-input" type="text" value={this.state.password} placeholder="Password" onChange={(event) => this.updateState(event, 'password')}/>
+            <button className="submit-button" onClick={(event) => this.handleClick(event)}>Submit</button>
             <div className="no-account">
-              <h3>Don't have an account?
+              <h3 className="dont-have-account">Don't have an account?
                 <Link to={'/register'}>
                   <span className="register-link">Click here to register.</span>
                 </Link>

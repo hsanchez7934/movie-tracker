@@ -20,7 +20,7 @@ const MovieCard = ({ title, releaseDate, image, addFavorite, voteAverage, overvi
 
   return(
     <article className='movie-card'>
-      <button onClick={() => addFavorite(favoriteMovie(login.id, movie))}>Fav</button>
+      <button className="fav-button" onClick={() => addFavorite(favoriteMovie(login.id, movie))}>Add Favorite</button>
       <div className="header-container">
       <h3 className="title-card">{title}</h3>
       <p className="release-date-card">Release Date: {releaseDate}</p>

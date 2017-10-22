@@ -29,11 +29,12 @@ class Register extends Component {
   render() {
     return (
       <div className='register'>
-        <input type="text" placeholder="Name" value={this.state.name} onChange={(event) => this.updateState(event, 'name')}/>
-        <input type="text" placeholder="Email" value={this.state.email} onChange={(event) => this.updateState(event, 'email')}/>
-        <input type="text" placeholder="Password"
+        <h2 className="register-here">Don't have an account? Register here!</h2>
+        <input className="name-input" type="text" placeholder="Name" value={this.state.name} onChange={(event) => this.updateState(event, 'name')}/>
+        <input className="email-input" type="text" placeholder="Email" value={this.state.email} onChange={(event) => this.updateState(event, 'email')}/>
+        <input className="password-input" type="text" placeholder="Password"
           value={this.state.password} onChange={(event) => this.updateState(event, 'password')}/>
-        <button onClick={(event) => this.handleClick(event)}>Submit</button>
+        <button className="submit-button" onClick={(event) => this.handleClick(event)}>Submit</button>
       </div>
     )
   }
