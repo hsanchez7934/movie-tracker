@@ -17,7 +17,10 @@ console.log('header props: ', props);
           props.currUser.id &&
           <div className="logged-in-user">
             <h3 className="welcome-user">Hello, <span>{props.currUser.name}</span></h3>
-            <button onClick={() => logout()}>Log Out</button>
+            <Link to={'/favorites'}>
+            <button className="favorites-button">Favorites</button>
+          </Link>
+            <button className="logout-button" onClick={() => logout()}>Log Out</button>
           </div>
         }
       </div>

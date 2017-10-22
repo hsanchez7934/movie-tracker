@@ -24,6 +24,8 @@ const MovieCard = ({ title, releaseDate, image, addFavorite, voteAverage, overvi
       <div className="header-container">
       <h3 className="title-card">{title}</h3>
       <p className="release-date-card">Release Date: {releaseDate}</p>
+      <p className="overview">Overview: {overview}</p>
+      <p className="voteAverage">Rating: {voteAverage}</p>
     </div>
       <img className="movie-image" src={`https://image.tmdb.org/t/p/w500${image}`} alt={`${title} - poster`} />
     </article>
