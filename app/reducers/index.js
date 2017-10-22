@@ -3,13 +3,15 @@ import movies from './GetMoviesReducer.js';
 import user from './AddUserReducer.js';
 import login from './LoginReducer.js';
 import favorites from './AddFavoriteReducer.js';
+import favoritesDB from './GetFavoritesReducer.js';
 
 
 const rootReducer = combineReducers({
   movies,
   user,
   login,
-  favorites
+  favorites,
+  favoritesDB
 });
 
 export default rootReducer
