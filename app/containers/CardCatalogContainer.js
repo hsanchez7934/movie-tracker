@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getMovies, getNowPlaying, addFavorite } from './../actions/index.js';
+import { getMovies, getNowPlaying, addFavorite, deleteFavoriteDB } from './../actions/index.js';
 import CardCatalog from './../components/App/CardCatalog/CardCatalog.jsx';
 
 const mapStateToProps = (store) => ({
@@ -14,6 +14,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   addFavorite: (movie) => {
      dispatch(addFavorite(movie))
+  }, 
+  deleteFavorite: (movie) => {
+    dispatch(deleteFavoriteDB(movie))
   }
 })
 

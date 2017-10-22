@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const Header = (props) => {
   const { logout } = props;
-console.log('header props: ', props);
     return (
       <div className="not-logged-in-user">
         <h2 className="movie-tracker-title">Movie <span className="tracker">Tracker</span></h2>
