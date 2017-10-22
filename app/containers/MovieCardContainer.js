@@ -4,9 +4,9 @@ import MovieCard from './../components/App/CardCatalog/MovieCard/MovieCard.jsx';
 
 
 const mapStateToProps = (store) => ({
-  currUser: store.login,
-  favorite: store.favorites
-})
+  login: store.login,
+  favorites: store.favorites
+});
 
 
 const mapDispatchToProps = dispatch => ({
