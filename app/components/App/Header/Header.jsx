@@ -10,7 +10,7 @@ console.log('header props: ', props);
         <h2 className="movie-tracker-title">Movie <span className="tracker">Tracker</span></h2>
         {!props.currUser.id &&
           <Link to={'/login'}>
-            <button>Login</button>
+            <button className="login-button">Login</button>
           </Link>
         }
         {
