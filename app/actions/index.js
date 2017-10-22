@@ -29,6 +29,14 @@ export const logout = (currUser) => {
   }
 }
 
+export const favorite = (movie) => {
+  return {
+    type: 'ADD_FAVORITE' ,
+    movie
+  }
+}
+
+
 export const loginUser = (currUser) => {
   return (dispatch) => {
     fetch('http://localhost:3000/api/users', {
@@ -64,5 +72,22 @@ export const getNowPlaying = () => {
     fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${jenKey.jenKey}`)
     .then(response => response.json())
     .then((parsedResponse) => (dispatch(getMovies(parsedResponse.results))))
+  }
+}
+
+export const addFavorite = fav => {
+  console.log(fav);
+  return dispatch => {
+    fetch('/api/users/favorites/new', {
+      method: 'POST',
+      body: JSON.stringify(fav),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(parsedResponse => {
+        dispatch(favorite(parsedResponse))
+    })
   }
 }
