@@ -1,6 +1,13 @@
 import jenKey from './../key.js';
 import { cleanData } from './../helper.js'
 
+export const getFavorites = (favoritesDB) => {
+  return {
+    type: 'GET_FAVORITES',
+    favoritesDB
+  }
+}
+
 export const getMovies = (movies) => {
   return {
     type: 'GET_MOVIES',
@@ -43,9 +50,21 @@ export const deleteFavorite = (favorite) => {
   }
 }
 
+
+export const getFavoritesDB = (id) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/users/${id}/favorites`)
+    .then(response => response.json())
+    .then(parsedResponse => {
+      console.log(parsedResponse);
+      return dispatch(getFavorites(parsedResponse.data))
+    })
+  }
+}
+
+
 export const deleteFavoriteDB = (favorite) => {
   return (dispatch) => {
-    // /users/:id/favorites/:favID
     fetch(`http://localhost:3000/api/users/${favorite.user_id}/favorites/${favorite.movie_id}`, {
       method: 'DELETE',
       body: JSON.stringify([favorite.user_id, favorite.movie_id]),

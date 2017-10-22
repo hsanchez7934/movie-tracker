@@ -13,20 +13,18 @@ const favoriteMovie = (id, movie) => {
   }
 }
 
-const handleClick = (id, movie, favorites, deleteFavorite, addFavorite) => {
-  const indexOfFavorites = favorites.findIndex(favorite => favorite.movie_id === movie.id);
+const handleClick = (id, movie, favoritesDB, deleteFavorite, addFavorite) => {
+  const indexOfFavorites = favoritesDB.findIndex(favorite => favorite.movie_id === movie.id);
   return indexOfFavorites !== -1
          ? deleteFavorite(favoriteMovie(id, movie))
          : addFavorite(favoriteMovie(id, movie));
 }
 
-
-
-const MovieCard = ({ addFavorite, login, movie, deleteFavorite, favorites }) => {
+const MovieCard = ({ addFavorite, login, movie, deleteFavorite, favoritesDB }) => {
 const { title, release_date, poster_path, vote_average, overview } = movie;
   return(
     <article className='movie-card'>
-      <button className="fav-button" onClick={() => handleClick(login.id, movie, favorites, deleteFavorite, addFavorite)}>Add Favorite</button>
+      <button className="fav-button" onClick={() => handleClick(login.id, movie, favoritesDB, deleteFavorite, addFavorite)}>Add Favorite</button>
       <div className="header-container">
         <h3 className="title-card">{title}</h3>
         <p className="release-date-card">Release Date: {release_date}</p>
