@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieCardContainer from './../../../containers/MovieCardContainer';
 
+
 export default class Favorites extends Component {
   constructor() {
     super()
@@ -12,7 +13,9 @@ export default class Favorites extends Component {
 
   render() {
     const { addFavorite, login, deleteFavorite, favoritesDB } = this.props;
+
     const mappedCards = favoritesDB.map( (movie, index) => {
+      // console.log('favorites-movie: ', movie);
       return (
         <MovieCardContainer movie={movie}
                             key={index} />

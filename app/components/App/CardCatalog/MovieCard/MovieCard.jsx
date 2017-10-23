@@ -9,12 +9,15 @@ const favoriteMovie = (id, movie) => {
             poster_path,
             vote_average,
             overview,
-            movie_id: movie.id
+            movie_id: movie.movie_id || movie.id
   }
 }
 
 const handleClick = (id, movie, favoritesDB, deleteFavorite, addFavorite) => {
-  const indexOfFavorites = favoritesDB.findIndex(favorite => favorite.movie_id === movie.id);
+  const cleanFavorite = favoriteMovie(id, movie);
+  console.log('cleanfavorite: ', cleanFavorite);
+  const indexOfFavorites = favoritesDB.findIndex(favorite => favorite.movie_id === cleanFavorite.movie_id);
+
   return indexOfFavorites !== -1
          ? deleteFavorite(favoriteMovie(id, movie))
          : addFavorite(favoriteMovie(id, movie));

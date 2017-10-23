@@ -14,6 +14,7 @@ export default class CardCatalog extends Component {
   render() {
     const { movies, addFavorite, login, deleteFavorite, favoritesDB } = this.props;
     const mappedCards = movies.map( (movie, index) => {
+      // console.log('catalog-move: ', movie);
       return (
         <MovieCardContainer movie={movie}
                             key={index} />
