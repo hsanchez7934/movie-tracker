@@ -1,4 +1,4 @@
-import jenKey from './../key.js';
+import jenKey from './../key.js'
 import { cleanData } from './../helper.js'
 
 export const getFavorites = (favoritesDB) => {
@@ -12,33 +12,33 @@ export const getMovies = (movies) => {
   return {
     type: 'GET_MOVIES',
     movies
-  };
+  }
 }
 
 export const addUser = (user) => {
   return {
     type: 'ADD_USER',
     user
-  };
+  }
 }
 
 export const login = (currUser) => {
   return {
-    type: 'LOGIN' ,
+    type: 'LOGIN',
     currUser
   }
 }
 
 export const logout = (currUser) => {
   return {
-    type: 'LOGOUT' ,
+    type: 'LOGOUT',
     currUser
   }
 }
 
 export const favorite = (movie) => {
   return {
-    type: 'ADD_FAVORITE' ,
+    type: 'ADD_FAVORITE',
     movie
   }
 }
@@ -50,17 +50,15 @@ export const deleteFavorite = (favorite) => {
   }
 }
 
-
 export const getFavoritesDB = (id) => {
   return (dispatch) => {
     fetch(`http://localhost:3000/api/users/${id}/favorites`)
-    .then(response => response.json())
-    .then(parsedResponse => {
-      return dispatch(getFavorites(parsedResponse.data))
-    })
+      .then(response => response.json())
+      .then(parsedResponse => {
+        return dispatch(getFavorites(parsedResponse.data))
+      })
   }
 }
-
 
 export const deleteFavoriteDB = (favorite) => {
   return (dispatch) => {
@@ -71,7 +69,7 @@ export const deleteFavoriteDB = (favorite) => {
         'Content-Type': 'application/json'
       }
     }).then(response => response.json())
-    .then(parsedResponse => dispatch(deleteFavorite(favorite)))
+      .then(parsedResponse => dispatch(deleteFavorite(favorite)))
   }
 }
 
@@ -84,8 +82,8 @@ export const loginUser = (currUser) => {
         'Content-Type': 'application/json'
       }
     }).then(response => response.json())
-    .then(parsedResponse => dispatch(login(parsedResponse.data)))
-    .catch(err => alert('Email and Password do not match'))
+      .then(parsedResponse => dispatch(login(parsedResponse.data)))
+      .catch(err => alert('Email and Password do not match'))
   }
 }
 
@@ -98,18 +96,19 @@ export const postUser = (user) => {
         'Content-Type': 'application/json'
       }
     }).then(response =>
-    response.ok ? response.json() : alert('Email already exists!'))
-    .then(parsedResponse => {
-      return cleanData(parsedResponse, user) }).then(cleanedData => dispatch(addUser(cleanedData)))
-    .catch(err => console.log('err: ', err))
+      response.ok ? response.json() : alert('Email already exists!'))
+      .then(parsedResponse => {
+        return cleanData(parsedResponse, user)
+      }).then(cleanedData => dispatch(addUser(cleanedData)))
+      .catch(err => console.log('err: ', err))
   }
 }
 
 export const getNowPlaying = () => {
   return (dispatch) => {
     fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${jenKey.jenKey}`)
-    .then(response => response.json())
-    .then((parsedResponse) => (dispatch(getMovies(parsedResponse.results))))
+      .then(response => response.json())
+      .then((parsedResponse) => (dispatch(getMovies(parsedResponse.results))))
   }
 }
 
@@ -125,6 +124,6 @@ export const addFavorite = fav => {
       .then(response => response.json())
       .then(parsedResponse => {
         dispatch(favorite(fav))
-    })
+      })
   }
 }

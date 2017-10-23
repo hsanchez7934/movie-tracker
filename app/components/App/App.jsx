@@ -6,8 +6,7 @@ import RegisterContainer from './../../containers/RegisterContainer.js'
 import LoginContainer from './../../containers/LoginContainer.js'
 import HeaderContainer from './../../containers/HeaderContainer.js'
 import FavoritesContainer from './../../containers/FavoritesContainer.js'
-import PropTypes from 'prop-types';
-
+import PropTypes from 'prop-types'
 
 class App extends Component {
   constructor() {
@@ -69,6 +68,6 @@ App.propTypes = {
   currUser: PropTypes.object,
   getMovies: PropTypes.func,
   movies: PropTypes.array
-};
+}
 
-export default App;
+export default App

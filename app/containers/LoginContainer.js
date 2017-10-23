@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { loginUser } from './../actions/index.js';
-import Login from './../components/App/Login/Login.jsx';
+import { connect } from 'react-redux'
+import { loginUser } from './../actions/index.js'
+import Login from './../components/App/Login/Login.jsx'
 
 const mapStateToProps = (store) => ({
   currUser: store.login
@@ -8,8 +8,8 @@ const mapStateToProps = (store) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   login: (currUser) => {
-    return dispatch(loginUser(currUser));
+    return dispatch(loginUser(currUser))
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
