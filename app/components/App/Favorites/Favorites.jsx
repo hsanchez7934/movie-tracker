@@ -22,7 +22,6 @@ class Favorites extends Component {
     const { addFavorite, login, deleteFavorite, favoritesDB } = this.props;
 
     const mappedCards = favoritesDB.map((movie, index) => {
-      console.log('movie ', movie);
       return (
         <MovieCardContainer
           movie={movie}
