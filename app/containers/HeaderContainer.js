@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout, loginUser } from './../actions/index.js';
+import { logout, loginUser } from './../actions/index.js';
 import Header from './../components/App/Header/Header.jsx';
 
 const mapStateToProps = (store) => ({

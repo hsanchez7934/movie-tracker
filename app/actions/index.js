@@ -63,7 +63,6 @@ export const getFavoritesDB = (id) => {
 
 
 export const deleteFavoriteDB = (favorite) => {
-  console.log(favorite.user_id, favorite.movie_id);
   return (dispatch) => {
     fetch(`http://localhost:3000/api/users/${favorite.user_id}/favorites/${favorite.movie_id}`, {
       method: 'DELETE',
@@ -72,10 +71,7 @@ export const deleteFavoriteDB = (favorite) => {
         'Content-Type': 'application/json'
       }
     }).then(response => response.json())
-    .then(parsedResponse => {
-      console.log(parsedResponse);
-      return dispatch(deleteFavorite(favorite))
-    })
+    .then(parsedResponse => dispatch(deleteFavorite(favorite)))
   }
 }
 
@@ -118,7 +114,6 @@ export const getNowPlaying = () => {
 }
 
 export const addFavorite = fav => {
-  console.log('fav: ', fav);
   return dispatch => {
     fetch('/api/users/favorites/new', {
       method: 'POST',

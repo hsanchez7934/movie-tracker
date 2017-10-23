@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
 class Register extends Component {
   constructor() {
@@ -11,9 +12,15 @@ class Register extends Component {
   }
 
   updateState(event, key) {
-    this.setState({
-      [key]: event.target.value
-    });
+    if(key === 'email'){
+      this.setState({
+        [key]: event.target.value.toLowerCase()
+      });
+    } else {
+      this.setState({
+        [key]: event.target.value
+      });
+    }
   }
 
   handleClick(event) {
