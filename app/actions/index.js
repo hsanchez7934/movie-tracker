@@ -114,7 +114,6 @@ export const getNowPlaying = () => {
 }
 
 export const addFavorite = fav => {
-  console.log('fav: ', fav);
   return dispatch => {
     fetch('/api/users/favorites/new', {
       method: 'POST',
