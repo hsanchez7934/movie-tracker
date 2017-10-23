@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getMovies, getNowPlaying, addFavorite, deleteFavoriteDB, getFavoritesDB } from './../actions/index.js';
+import { getNowPlaying, addFavorite, deleteFavoriteDB } from './../actions/index.js';
 import CardCatalog from './../components/App/CardCatalog/CardCatalog.jsx';
 
 const mapStateToProps = (store) => ({

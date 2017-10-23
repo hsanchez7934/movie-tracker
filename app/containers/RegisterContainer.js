@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addUser, postUser } from './../actions/index.js';
+import { postUser } from './../actions/index.js';
 import Register from './../components/App/Register/Register.jsx';
 
 const mapStateToProps = (store) => ({
