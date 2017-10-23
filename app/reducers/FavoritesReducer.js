@@ -5,7 +5,7 @@ const favoritesDB = (state = [], action) => {
     case 'GET_FAVORITES':
       return action.favoritesDB;
     case 'DELETE_FAVORITE':
-      return state.filter(movie => movie.movie_id !== action.movie_id);
+      return state.filter(movie => movie.movie_id !== action.favorite.movie_id);
     default:
       return state;
   }

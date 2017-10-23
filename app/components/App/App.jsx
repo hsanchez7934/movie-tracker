@@ -1,20 +1,16 @@
 import React, { Component } from 'react'
-import { getNowPlaying, getMovies } from '../../actions'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 import CardCatalogContainer from './../../containers/CardCatalogContainer.js'
 import { Switch } from 'react-router'
 import RegisterContainer from './../../containers/RegisterContainer.js'
 import LoginContainer from './../../containers/LoginContainer.js'
 import HeaderContainer from './../../containers/HeaderContainer.js'
 import FavoritesContainer from './../../containers/FavoritesContainer.js'
+import PropTypes from 'prop-types'
 
-
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
-  }
-
-  componentDidMount() {
   }
 
   render () {
@@ -55,14 +51,23 @@ export default class App extends Component {
               render={() => {
                 return (
                   <div>
+                    <h2 className="movie-tracker-title">Movie Tracker</h2>
                     <FavoritesContainer />
                   </div>
                 )
               }}/>
           </Switch>
 
-      </div>
+        </div>
       </BrowserRouter>
     )
   }
 }
+
+App.propTypes = {
+  currUser: PropTypes.object,
+  getMovies: PropTypes.func,
+  movies: PropTypes.array
+}
+
+export default App

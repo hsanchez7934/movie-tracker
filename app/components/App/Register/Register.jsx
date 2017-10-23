@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router'
+import PropTypes from 'prop-types'
 
 class Register extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       name: '',
@@ -11,9 +13,15 @@ class Register extends Component {
   }
 
   updateState(event, key) {
-    this.setState({
-      [key]: event.target.value
-    });
+    if (key === 'email') {
+      this.setState({
+        [key]: event.target.value.toLowerCase()
+      })
+    } else {
+      this.setState({
+        [key]: event.target.value
+      })
+    }
   }
 
   handleClick(event) {
@@ -26,7 +34,7 @@ class Register extends Component {
     })
   }
 
-  render() {
+  render () {
     return (
       <div className='register'>
         <h2 className="register-here">Don't have an account? Register here!</h2>
@@ -40,4 +48,9 @@ class Register extends Component {
   }
 }
 
-export default Register;
+Register.propTypes = {
+  addUser: PropTypes.func,
+  user: PropTypes.object
+}
+
+export default Register

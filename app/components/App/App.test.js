@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-// import fetchMock from 'fetch-mock';
-import renderer from 'react-test-renderer';
-import { Route } from 'react-router';
-import { shallow, mount, render } from 'enzyme';
-import { Router } from 'react-router/MemoryRouter';
-import createHistory from 'history/createMemoryHistory';
+import { shallow } from 'enzyme'
+import App from './App'
+import ReactDOM from 'react-dom'
+import React from 'react'
 
+describe('App snapshot', () => {
 
-describe('App', () => {
-  it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  });
+  it('should always match the snapshot', () => {
+    const wrapper = shallow(<App />)
 
+    expect(wrapper).toMatchSnapshot()
+  })
 })

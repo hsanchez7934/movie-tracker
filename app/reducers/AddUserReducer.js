@@ -1,7 +1,9 @@
-const user = (state = [], action) => {
+const user = (state = {}, action) => {
   switch (action.type) {
     case "ADD_USER":
-      return [...state, action.user]
+      return action.user;
+    case 'LOGOUT':
+      return {};
     default:
       return state;
   }

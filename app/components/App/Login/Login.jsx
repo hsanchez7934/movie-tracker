@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router';
-import { Route, Link } from 'react-router-dom';
+import React, { Component } from 'react'
+import { Redirect } from 'react-router
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 class Login extends Component {
   constructor() {
@@ -12,9 +13,15 @@ class Login extends Component {
   }
 
   updateState(event, key) {
-    this.setState({
-      [key]: event.target.value
-    });
+    if(key === 'email'){
+      this.setState({
+        [key]: event.target.value.toLowerCase()
+      });
+    } else {
+      this.setState({
+        [key]: event.target.value
+      });
+    }
   }
 
   handleClick(event) {
@@ -50,5 +57,11 @@ class Login extends Component {
       </div>)
   }
 }
+
+Login.propTypes = {
+  currUser: PropTypes.object,
+  login: PropTypes.func,
+  logout: PropTypes.func
+};
 
 export default Login;
