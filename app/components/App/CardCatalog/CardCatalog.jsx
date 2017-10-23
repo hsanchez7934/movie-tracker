@@ -12,17 +12,16 @@ class CardCatalog extends Component {
     const cardIndex = favoritesDB.findIndex(
       (movieObject) => movieObject.movie_id === movie.id
     )
-    return cardIndex !== -1 ? '.fav-button' : '.remove-fav'
+    return cardIndex === -1 ? 'fav-button' : 'remove-fav'
   }
 
   componentDidMount () {
     this.props.getMovies()
   }
-  
+
   render () {
     const { movies, addFavorite, login, deleteFavorite, favoritesDB } = this.props
     const mappedCards = movies.map((movie, index) => {
-      console.log('movie: ', movie)
 
       return (
         <MovieCardContainer
