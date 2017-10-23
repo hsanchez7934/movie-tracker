@@ -12,9 +12,15 @@ class Login extends Component {
   }
 
   updateState(event, key) {
-    this.setState({
-      [key]: event.target.value
-    });
+    if(key === 'email'){
+      this.setState({
+        [key]: event.target.value.toLowerCase()
+      });
+    } else {
+      this.setState({
+        [key]: event.target.value
+      });
+    }
   }
 
   handleClick(event) {
