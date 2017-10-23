@@ -6,6 +6,14 @@ class Favorites extends Component {
   constructor() {
     super()
   }
+
+  activeClass(movie, favoritesDB) {
+    const cardIndex = favoritesDB.findIndex(
+      (movieObject) => movieObject.movie_id === movie.movie_id
+    )
+    return cardIndex === -1 ? 'fav-button' : 'remove-fav'
+  }
+
   componentDidMount () {
     this.props.getFavoritesDB(this.props.login.id)
   }
@@ -14,10 +22,12 @@ class Favorites extends Component {
     const { addFavorite, login, deleteFavorite, favoritesDB } = this.props;
 
     const mappedCards = favoritesDB.map((movie, index) => {
+      console.log('movie ', movie);
       return (
         <MovieCardContainer
           movie={movie}
-          key={index} />
+          key={index}
+          activeClass={this.activeClass(movie, favoritesDB)}/>
       )
     })
 

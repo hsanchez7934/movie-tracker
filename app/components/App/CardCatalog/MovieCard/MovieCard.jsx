@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const favoriteMovie = (currentId, movie) => {
   const { title, release_date, poster_path, vote_average, overview } = movie;
-  return {  user_id: id,
+  return {  user_id: currentId,
             title,
             release_date,
             poster_path,
@@ -32,13 +32,13 @@ const { title, release_date, poster_path, vote_average, overview } = movie;
     <article className='movie-card'>
 
       {login.id &&
-        <button className="fav-button" onClick={(event) =>
+        <button className={activeClass} onClick={(event) =>
           {handleClick(login.id, movie, favoritesDB, deleteFavorite, addFavorite)}}>
-        Add Favorite</button>
+        Favorite</button>
       }
       {!login.id &&
         <Link to={'/login'}>
-          <button className="fav-button">Add Favorite</button>
+          <button className={activeClass}>Favorite</button>
         </Link>
       }
       <div className="header-container">

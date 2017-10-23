@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router
+import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 class Login extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       email: '',
@@ -13,7 +13,7 @@ class Login extends Component {
   }
 
   updateState(event, key) {
-    if(key === 'email'){
+    if (key === 'email'){
       this.setState({
         [key]: event.target.value.toLowerCase()
       });

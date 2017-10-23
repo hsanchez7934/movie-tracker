@@ -41,7 +41,8 @@
   height: 175px;
 }
 
-.fav-button {
+.fav-button,
+.remove-fav {
   margin-top: 10px;
   height: 20px;
   width: 120px;
@@ -51,7 +52,7 @@
 }
 
 .remove-fav {
-  background-color: yellow;
+  background-color: #47FD35;
 }
 
 .fav-button:hover {
