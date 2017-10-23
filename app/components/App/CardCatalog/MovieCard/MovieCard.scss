@@ -1,6 +1,6 @@
 .movie-card {
   border: 2px solid red;
-  width: 33%;
+  width: 25%;
   background-color: #555555;
   margin: 20px 10px 20px 10px;
   border-radius: 25px;
@@ -20,20 +20,25 @@
   font-weight: bold;
   font-size: 32px;
   margin: 10px 10px 10px 10px;
+  color: white;
 }
 
-.release-date-card {
+.release-date-card,
+.vote-average {
+  font-family: monospace;
   font-size: 14px;
+
 }
 
 .movie-image {
   height: 400px;
-  width: 80%;
+  width: 100%;
+  border-radius: 25px;
 }
 
 .header-container {
   background-color: #555555;
-  height: 200px;
+  height: 175px;
 }
 
 .fav-button {
@@ -43,6 +48,10 @@
   background-color: red;
   border-radius: 25px;
   cursor: pointer;
+}
+
+.remove-fav {
+  background-color: yellow;
 }
 
 .fav-button:hover {
