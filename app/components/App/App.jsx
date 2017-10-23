@@ -51,6 +51,7 @@ export default class App extends Component {
               render={() => {
                 return (
                   <div>
+                    <h2 className="movie-tracker-title">Movie Tracker</h2>
                     <FavoritesContainer />
                   </div>
                 )

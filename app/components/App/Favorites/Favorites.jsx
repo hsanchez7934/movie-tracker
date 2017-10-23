@@ -10,6 +10,24 @@ export default class Favorites extends Component {
     this.props.getFavoritesDB(this.props.login.id);
   }
 
+  // haveFavorites(favoritesDB, mappedCards) {
+  //     if(favoritesDB.length <= 0)  {
+  //           return (
+  //               <div className="card-catalog">
+  //                 {'No favorite cards found.'}
+  //               </div>
+  //             )
+  //           } else {
+  //             return (
+  //             favoritesDB.length > 0 &&
+  //               <div className="card-catalog">
+  //                 {mappedCards}
+  //               </div>
+  //           )
+  //           }
+  //
+  // }
+
   render() {
     const { addFavorite, login, deleteFavorite, favoritesDB } = this.props;
 
@@ -19,10 +37,20 @@ export default class Favorites extends Component {
                             key={index} />
       )
     });
-    return (
-      <div className="card-catalog">
-        {mappedCards}
-      </div>
-    )
+
+    if(favoritesDB.length <= 0)  {
+          return (
+              <div className="card-catalog no-faves">
+                {'No favorite cards found.'}
+              </div>
+            )
+          } else {
+            return (
+            favoritesDB.length > 0 &&
+              <div className="card-catalog">
+                {mappedCards}
+              </div>
+          )
+          }
   }
 }
