@@ -1,13 +1,13 @@
 @import './components/App/App.scss';
 @import './components/App/CardCatalog/MovieCard/MovieCard.scss';
 @import './components/App/CardCatalog/CardCatalog.scss';
-
 @import './components/App/Header/Header.scss';
 @import './components/App/Login/Login.scss';
 @import './components/App/Register/Register.scss';
 
+
 #main {
-  margin-top: -40px;
+  display: flex;
   text-align: center;
   background-color: black;
 }
