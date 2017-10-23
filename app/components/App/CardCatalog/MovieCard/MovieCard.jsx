@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 
 const favoriteMovie = (id, movie) => {
@@ -52,5 +53,15 @@ const { title, release_date, poster_path, vote_average, overview } = movie;
     </article>
   )
 }
+
+MovieCard.propTypes = {
+
+  activeClass: PropTypes.string,
+  addFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func,
+  favoritesDB: PropTypes.array,
+  login: PropTypes.object,
+  movie: PropTypes.object
+};
 
 export default MovieCard;

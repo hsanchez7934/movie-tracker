@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Login extends Component {
   constructor() {
@@ -56,5 +57,11 @@ class Login extends Component {
       </div>)
   }
 }
+
+Login.propTypes = {
+  currUser: PropTypes.object,
+  login: PropTypes.func,
+  logout: PropTypes.func
+};
 
 export default Login;

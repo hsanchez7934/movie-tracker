@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import MovieCardContainer from './../../../containers/MovieCardContainer';
 import css from './MovieCard/MovieCard.scss';
+import PropTypes from 'prop-types';
 
 
 
-export default class CardCatalog extends Component {
+class CardCatalog extends Component {
   constructor() {
     super();
   }
@@ -38,3 +39,15 @@ export default class CardCatalog extends Component {
     )
   }
 }
+
+CardCatalog.propTypes = {
+
+addFavorite: PropTypes.func,
+deleteFavorite: PropTypes.func,
+favoritesDB: PropTypes.array,
+getMovies: PropTypes.func,
+login: PropTypes.object,
+movies: PropTypes.array
+};
+
+export default CardCatalog;

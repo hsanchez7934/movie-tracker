@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Header = (props) => {
   const { logout } = props;
@@ -25,5 +26,10 @@ const Header = (props) => {
       )
         }
 
+Header.propTypes = {
+  currUser: PropTypes.object,
+  login: PropTypes.func,
+  logout: PropTypes.func
+};
 
 export default Header;
