@@ -1,4 +1,6 @@
 import React from 'react';
+// import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const favoriteMovie = (id, movie) => {
@@ -14,6 +16,7 @@ const favoriteMovie = (id, movie) => {
 }
 
 const handleClick = (id, movie, favoritesDB, deleteFavorite, addFavorite) => {
+
   const cleanFavorite = favoriteMovie(id, movie);
   const indexOfFavorites = favoritesDB.findIndex(favorite => favorite.movie_id === cleanFavorite.movie_id);
 
@@ -26,7 +29,16 @@ const MovieCard = ({ addFavorite, login, movie, deleteFavorite, favoritesDB }) =
 const { title, release_date, poster_path, vote_average, overview } = movie;
   return(
     <article className='movie-card'>
-      <button className="fav-button" onClick={() => handleClick(login.id, movie, favoritesDB, deleteFavorite, addFavorite)}>Add Favorite</button>
+      {login.id &&
+        <button className="fav-button" onClick={(event) =>
+          {handleClick(login.id, movie, favoritesDB, deleteFavorite, addFavorite)}}>
+        Add Favorite</button>
+      }
+      {!login.id &&
+        <Link to={'/login'}>
+          <button className="fav-button">Add Favorite</button>
+        </Link>
+      }
       <div className="header-container">
         <h3 className="title-card">{title}</h3>
         <p className="release-date-card">Release Date: {release_date}</p>
