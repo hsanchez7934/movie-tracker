@@ -15,7 +15,6 @@ const favoriteMovie = (id, movie) => {
 
 const handleClick = (id, movie, favoritesDB, deleteFavorite, addFavorite) => {
   const cleanFavorite = favoriteMovie(id, movie);
-  console.log('cleanfavorite: ', cleanFavorite);
   const indexOfFavorites = favoritesDB.findIndex(favorite => favorite.movie_id === cleanFavorite.movie_id);
 
   return indexOfFavorites !== -1

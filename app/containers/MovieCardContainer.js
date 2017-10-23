@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { login, logout, loginUser, addFavorite, favorite, deleteFavorite, deleteFavoriteDB, getFavorites, getFavoritesDB } from './../actions/index.js';
+import { addFavorite, deleteFavoriteDB } from './../actions/index.js';
 import MovieCard from './../components/App/CardCatalog/MovieCard/MovieCard.jsx';
 
 

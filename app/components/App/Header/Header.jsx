@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link } from 'react-router-dom';
-// import { getNowPlaying, getMovies } from './../../../actions/index.js';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
   const { logout } = props;

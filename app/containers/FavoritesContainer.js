@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Favorites from './../components/App/Favorites/Favorites.jsx';
-import { favoritesDB, getFavoritesDB, favorite, addFavorite, deleteFavoriteDB, deleteFavorite } from './../actions/index.js';
+import { getFavoritesDB, addFavorite, deleteFavoriteDB } from './../actions/index.js';
 
 const mapStateToProps = (store) => ({
   favoritesDB: store.favoritesDB,
