@@ -4,7 +4,7 @@ import CardCatalog from './../components/App/CardCatalog/CardCatalog.jsx';
 
 const mapStateToProps = (store) => ({
   movies: store.movies,
-  favorite: store.favorites,
+  favoritesDB: store.favoritesDB,
   login: store.login
 })
 
@@ -14,7 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   addFavorite: (movie) => {
      dispatch(addFavorite(movie))
-  }, 
+  },
   deleteFavorite: (movie) => {
     dispatch(deleteFavoriteDB(movie))
   }
