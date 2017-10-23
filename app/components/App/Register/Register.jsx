@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router';
+import PropTypes from 'prop-types';
 
 class Register extends Component {
   constructor() {
@@ -46,5 +47,10 @@ class Register extends Component {
     )
   }
 }
+
+Register.propTypes = {
+  addUser: PropTypes.func,
+  user: PropTypes.object
+};
 
 export default Register;

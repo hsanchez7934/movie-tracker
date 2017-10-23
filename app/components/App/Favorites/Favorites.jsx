@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import MovieCardContainer from './../../../containers/MovieCardContainer';
+import PropTypes from 'prop-types';
 
 
-export default class Favorites extends Component {
+class Favorites extends Component {
   constructor() {
     super()
   }
@@ -10,23 +11,6 @@ export default class Favorites extends Component {
     this.props.getFavoritesDB(this.props.login.id);
   }
 
-  // haveFavorites(favoritesDB, mappedCards) {
-  //     if(favoritesDB.length <= 0)  {
-  //           return (
-  //               <div className="card-catalog">
-  //                 {'No favorite cards found.'}
-  //               </div>
-  //             )
-  //           } else {
-  //             return (
-  //             favoritesDB.length > 0 &&
-  //               <div className="card-catalog">
-  //                 {mappedCards}
-  //               </div>
-  //           )
-  //           }
-  //
-  // }
 
   render() {
     const { addFavorite, login, deleteFavorite, favoritesDB } = this.props;
@@ -54,3 +38,13 @@ export default class Favorites extends Component {
           }
   }
 }
+
+Favorites.propTypes = {
+  addFavorite: PropTypes.func,
+  deleteFavorite: PropTypes.func,
+  favoritesDB: PropTypes.array,
+  getFavoritesDB: PropTypes.func,
+  login: PropTypes.object
+};
+
+export default Favorites;
