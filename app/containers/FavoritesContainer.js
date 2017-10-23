@@ -9,8 +9,8 @@ const mapStateToProps = (store) => ({
 
 
 const mapDispatchToProps = (dispatch) => ({
-  addFavorite: favorite => dispatch(addFavorite(favorite)),
-  deleteFavorite: favorite => dispatch(deleteFavoriteDB(favorite)),
+  addFavorite: movie => dispatch(addFavorite(movie)),
+  deleteFavorite: movie => dispatch(deleteFavoriteDB(movie)),
   getFavoritesDB: favoritesDB => dispatch(getFavoritesDB(favoritesDB))
 });
 
