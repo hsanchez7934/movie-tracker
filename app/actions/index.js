@@ -63,7 +63,6 @@ export const getFavoritesDB = (id) => {
 
 
 export const deleteFavoriteDB = (favorite) => {
-  console.log(favorite.user_id, favorite.movie_id);
   return (dispatch) => {
     fetch(`http://localhost:3000/api/users/${favorite.user_id}/favorites/${favorite.movie_id}`, {
       method: 'DELETE',
