@@ -3,11 +3,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
-const favoriteMovie = (id, movie) => {
+const favoriteMovie = (currentId, movie) => {
   const { title, release_date, poster_path, vote_average, overview } = movie;
-
-
-
   return {  user_id: id,
             title,
             release_date,
